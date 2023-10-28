@@ -57,11 +57,15 @@ HINT: You may need some global state for this problem.
 ==================== */
 
 let spanContainer = document.querySelector('#span-container');
-spanContainer.appendChild(htmlToElement('<span>0</span>'));
+let i = 0;
+spanContainer.appendChild(htmlToElement(`<span>${i}</span>`));
 
-let addSpanButton;
+let addSpanButton =  document.querySelector('#add-span-button');
 if (addSpanButton) {
-  addSpanButton.addEventListener('click', () => {});
+  addSpanButton.addEventListener('click', () => {
+    i += 1;
+    spanContainer.appendChild(htmlToElement(`<span>${i}</span>`))
+  });
 }
 
 /* =====================
